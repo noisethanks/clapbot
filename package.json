@@ -1,0 +1,21 @@
+{
+    "name": "discord_screening_bot",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "ts-node-dev src/index.ts",
+        "build": "tsc"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "discord.js": "^14.21.0",
+        "dotenv": "^17.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.15",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.8.3"
+    }
+}
