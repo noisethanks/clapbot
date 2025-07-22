@@ -1,6 +1,6 @@
 import { Interaction, ChatInputCommandInteraction } from 'discord.js';
-import type { Command } from '../types/Command';
-import type { ExtendedClient } from '../types/ExtendedClient';
+import type { Command } from '../types/Command.js';
+import type { ExtendedClient } from '../types/ExtendedClient.js';
 
 export async function handleInteraction(
   interaction: Interaction,

@@ -3,12 +3,12 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-import { handleMessage } from './handlers/messageHandler';
-import { handleInteraction } from './handlers/slashCommands';
-import { postCommand } from './commands/post';
-import type { Command } from './types/Command';
+import { handleMessage } from './handlers/messageHandler.js';
+import { handleInteraction } from './handlers/slashCommands.js';
+import { postCommand } from './commands/post.js';
+import type { Command } from './types/Command.js';
 
-import type { ExtendedClient } from './types/ExtendedClient';
+import type { ExtendedClient } from './types/ExtendedClient.js';
 
 dotenv.config();
 

@@ -1,6 +1,6 @@
 import { SlashCommandBuilder, ChatInputCommandInteraction, TextChannel } from 'discord.js';
-import type { Command } from '../types/Command';
-import { moderate } from '../moderation/moderate';
+import type { Command } from '../types/Command.js';
+import { moderate } from '../moderation/moderate.js';
 
 export const postCommand: Command = {
   data: new SlashCommandBuilder()

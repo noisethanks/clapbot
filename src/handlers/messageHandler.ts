@@ -1,6 +1,6 @@
 import { Message } from 'discord.js';
-import { moderate } from '../moderation/moderate';
-import { logViolation } from '../utils/logger';
+import { moderate } from '../moderation/moderate.js';
+import { logViolation } from '../utils/logger.js';
 
 export async function handleMessage(message: Message): Promise<void> {
   if (message.author.bot || !message.guild) return;
