@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-
+import { REST,Client, GatewayIntentBits, Interaction, Routes,Collection } from 'discord.js'
 import { handleMessage } from './handlers/messageHandler.js';
 import { handleInteraction } from './handlers/slashCommands.js';
 import { postCommand } from './commands/post.js';

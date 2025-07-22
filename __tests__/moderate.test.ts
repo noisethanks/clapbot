@@ -8,7 +8,7 @@ describe('moderate()', () => {
   });
 
   it('passes a safe message', async () => {
-    const result = await moderate("I like turtles.");
+    const result = await moderate('I like turtles.');
     expect(result.ok).toBe(true);
   });
 });

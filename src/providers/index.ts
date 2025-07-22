@@ -1,4 +1,3 @@
-
 // src/providers/index.ts
 import { perspectiveProvider } from './perspectiveProvider.js';
 import type { ModerationProvider } from '../types/ModerationProvider.js';

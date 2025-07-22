@@ -6,4 +6,3 @@ export interface ModerationResult {
 export interface ModerationProvider {
   moderate(text: string): Promise<ModerationResult>;
 }
-

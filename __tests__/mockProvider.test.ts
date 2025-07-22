@@ -9,7 +9,7 @@ describe('mockProvider.moderate()', () => {
   });
 
   it('passes safe message', async () => {
-    const result = await mockProvider.moderate("Have a nice day!");
+    const result = await mockProvider.moderate('Have a nice day!');
     expect(result.ok).toBe(true);
     expect(result.reason).toBeUndefined();
   });
