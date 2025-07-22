@@ -1,4 +1,4 @@
-import { Interaction, ChatInputCommandInteraction, Client } from 'discord.js';
+import { Interaction, ChatInputCommandInteraction } from 'discord.js';
 import type { Command } from '../types/Command';
 import type { ExtendedClient } from '../types/ExtendedClient';
 

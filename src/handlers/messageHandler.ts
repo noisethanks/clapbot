@@ -6,7 +6,7 @@ export async function handleMessage(message: Message): Promise<void> {
   if (message.author.bot || !message.guild) return;
   if (message.channel.id === process.env.MODERATED_GATE_CHANNEL_ID) {
     if (!message.interactionMetadata) {
-      const reply = await message.author
+      await message.author
         .send({
           content: `🚫 Please use the /post command to submit content.`,
         })

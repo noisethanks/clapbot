@@ -22,7 +22,6 @@ const THRESHOLDS: Record<Attribute, number> = {
 };
 
 export async function moderate(content: string): Promise<{ ok: boolean; reason?: string }> {
-  console.log('API KEY', PERSPECTIVE_API_KEY);
   try {
     const res = await fetch(`${PERSPECTIVE_URL}?key=${PERSPECTIVE_API_KEY}`, {
       method: 'POST',

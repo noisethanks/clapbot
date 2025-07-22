@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, ChatInputCommandInteraction, Client, TextChannel } from 'discord.js';
+import { SlashCommandBuilder, ChatInputCommandInteraction, TextChannel } from 'discord.js';
 import type { Command } from '../types/Command';
 import { moderate } from '../moderation/moderate';
 
@@ -10,7 +10,7 @@ export const postCommand: Command = {
       opt.setName('message').setDescription('The message you want to post').setRequired(true),
     ),
 
-  async execute(interaction: ChatInputCommandInteraction, client: Client) {
+  async execute(interaction: ChatInputCommandInteraction) {
     const message = interaction.options.getString('message', true);
     const userTag = interaction.user.tag;
 
