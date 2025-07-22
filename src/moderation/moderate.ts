@@ -1,4 +1,3 @@
-
 const PERSPECTIVE_API_KEY = process.env.PERSPECTIVE_API_KEY!;
 const PERSPECTIVE_URL = 'https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze';
 
@@ -14,16 +13,16 @@ const ATTRIBUTES = [
 type Attribute = (typeof ATTRIBUTES)[number];
 
 const THRESHOLDS: Record<Attribute, number> = {
-  TOXICITY: 0.80,
-  SEVERE_TOXICITY: 0.70,
+  TOXICITY: 0.8,
+  SEVERE_TOXICITY: 0.7,
   INSULT: 0.75,
-  THREAT: 0.60,
-  IDENTITY_ATTACK: 0.60,
-  SEXUALLY_EXPLICIT: 0.70,
+  THREAT: 0.6,
+  IDENTITY_ATTACK: 0.6,
+  SEXUALLY_EXPLICIT: 0.7,
 };
 
 export async function moderate(content: string): Promise<{ ok: boolean; reason?: string }> {
-    console.log("API KEY", PERSPECTIVE_API_KEY)
+  console.log('API KEY', PERSPECTIVE_API_KEY);
   try {
     const res = await fetch(`${PERSPECTIVE_URL}?key=${PERSPECTIVE_API_KEY}`, {
       method: 'POST',
@@ -31,10 +30,13 @@ export async function moderate(content: string): Promise<{ ok: boolean; reason?:
       body: JSON.stringify({
         comment: { text: content },
         languages: ['en'],
-        requestedAttributes: ATTRIBUTES.reduce((acc, attr) => {
-          acc[attr] = {};
-          return acc;
-        }, {} as Record<Attribute, object>),
+        requestedAttributes: ATTRIBUTES.reduce(
+          (acc, attr) => {
+            acc[attr] = {};
+            return acc;
+          },
+          {} as Record<Attribute, object>,
+        ),
       }),
     });
 

@@ -2,7 +2,10 @@ import { Interaction, ChatInputCommandInteraction, Client } from 'discord.js';
 import type { Command } from '../types/Command';
 import type { ExtendedClient } from '../types/ExtendedClient';
 
-export async function handleInteraction(interaction: Interaction, client: ExtendedClient): Promise<void> {
+export async function handleInteraction(
+  interaction: Interaction,
+  client: ExtendedClient,
+): Promise<void> {
   if (!interaction.isChatInputCommand()) return;
 
   const command = client.commands?.get(interaction.commandName) as Command | undefined;
@@ -16,9 +19,15 @@ export async function handleInteraction(interaction: Interaction, client: Extend
   } catch (err) {
     console.error(`Error executing command ${interaction.commandName}:`, err);
     if (interaction.replied || interaction.deferred) {
-      await interaction.followUp({ content: '❌ There was an error executing that command.', ephemeral: true });
+      await interaction.followUp({
+        content: '❌ There was an error executing that command.',
+        ephemeral: true,
+      });
     } else {
-      await interaction.reply({ content: '❌ There was an error executing that command.', ephemeral: true });
+      await interaction.reply({
+        content: '❌ There was an error executing that command.',
+        ephemeral: true,
+      });
     }
   }
 }
