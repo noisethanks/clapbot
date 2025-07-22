@@ -1,7 +1,8 @@
-import { Client, GatewayIntentBits, REST, Routes, Collection, Interaction } from 'discord.js';
 import dotenv from 'dotenv';
-
 dotenv.config();
+
+import { Client, GatewayIntentBits, REST, Routes, Collection, Interaction } from 'discord.js';
+
 
 import { handleMessage } from './handlers/messageHandler';
 import { handleInteraction } from './handlers/slashCommands';
