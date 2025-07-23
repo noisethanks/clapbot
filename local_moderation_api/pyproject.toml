@@ -1,7 +1,7 @@
 [project]
 name = "local-moderation-api"
 version = "0.1.0"
-description = "Add your description here"
+description = "Simple API for running toxic bert model locally"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []

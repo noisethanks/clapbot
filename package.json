@@ -1,5 +1,5 @@
 {
-    "name": "discord_screening_bot",
+    "name": "clapbot",
     "version": "1.0.0",
     "main": "index.js",
     "type": "module",

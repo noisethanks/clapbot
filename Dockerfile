@@ -15,4 +15,4 @@ COPY . .
 RUN pnpm build
 
 # Run the bot
-CMD ["node", "src/index.js"]
+CMD ["node", "/dist/src/index.js"]
