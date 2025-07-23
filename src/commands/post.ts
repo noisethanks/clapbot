@@ -1,6 +1,10 @@
-import { SlashCommandBuilder, ChatInputCommandInteraction, TextChannel } from 'discord.js';
+import {
+  SlashCommandBuilder,
+  ChatInputCommandInteraction,
+  TextChannel,
+} from 'discord.js';
 import type { Command } from '../types/Command.js';
-import { moderate } from '../moderation/moderate.js';
+import { channelModerationMap } from '../config.js';
 
 export const postCommand: Command = {
   data: new SlashCommandBuilder()
@@ -13,8 +17,19 @@ export const postCommand: Command = {
   async execute(interaction: ChatInputCommandInteraction) {
     const message = interaction.options.getString('message', true);
     const userTag = interaction.user.tag;
+    const channelId = interaction.channel?.id;
 
-    const result = await moderate(message);
+    const provider = channelId ? channelModerationMap[channelId] : undefined;
+
+    if (!provider) {
+      await interaction.reply({
+        content: '⚠️ No moderation provider configured for this channel.',
+        ephemeral: true,
+      });
+      return;
+    }
+
+    const result = await provider.moderate(message);
 
     if (!result.ok) {
       await interaction.reply({
@@ -28,6 +43,7 @@ export const postCommand: Command = {
       content: '✅ Your message passed moderation and has been posted.',
       ephemeral: true,
     });
+
     const targetChannel = interaction.channel as TextChannel;
     await targetChannel.send(`**[Moderated Post from ${userTag}]**\n${message}`);
   },

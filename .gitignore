@@ -4,3 +4,4 @@ dist
 *.js
 *.js.map
 coverage
+*/**/__pycache__
