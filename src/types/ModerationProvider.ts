@@ -1,8 +1,8 @@
 export interface ModerationResult {
-  ok: boolean;
-  reason?: string;
+    ok: boolean;
+    reason?: string;
 }
 
 export interface ModerationProvider {
-  moderate(text: string): Promise<ModerationResult>;
+    moderate(text: string): Promise<ModerationResult>;
 }
