@@ -1,6 +1,6 @@
 # 🛡️ Clapbot
 
-A Discord moderation bot supporting both local and remote screening (via Perspective API). It supports two moderation workflows: **gated posting** and **real-time cleanup**. Dockerized, configurable, and blazing fast with local inference.
+A Discord moderation bot supporting both local(via ToxicBERT) and remote (via Perspective API ) screening. It supports two moderation workflows: **gated posting** and **real-time cleanup**. Dockerized, configurable, and blazing fast with local inference.
 
 ![Clapbot Demo](media/clapbot_demo.gif)
 
