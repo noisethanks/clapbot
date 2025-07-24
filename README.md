@@ -12,7 +12,7 @@ A Discord moderation bot supporting both local(via ToxicBERT) and remote (via Pe
 | Provider        | Avg Response Time | Requires Internet | API Rate Limits | Cost        |
 |----------------|-------------------|-------------------|------------------|-------------|
 | 🌐 Perspective  | ~350–400ms        | ✅ Yes             | ✅ Yes            | ✅ Free (w/ quota) |
-| 🧱 Local (FastAPI) | ~20–30ms          | ❌ No              | ❌ No             | ✅ Free (self-hosted) |
+| 🧱 Local (ToxicBERT) | ~20–30ms          | ❌ No              | ❌ No             | ✅ Free (self-hosted) |
 
 ## ✨ Features
 
